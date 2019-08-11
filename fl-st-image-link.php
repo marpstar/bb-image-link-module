@@ -1,10 +1,10 @@
 <?php
 /**
- * Plugin Name: Beaver Builder Image Link
+ * Plugin Name: Sandtoken BB Image Link
  * Plugin URI: http://www.sandtoken.com/wordpress/beaver-builder-image-link-module
- * Description: An example plugin for creating custom builder modules.
+ * Description: A plugin adding an "Image Link" module to Beaver Builder.
  * Version: 2.0
- * Author: Sandtoken
+ * Author: Sandtoken LLC
  * Author URI: http://www.sandtoken.com
  */
 define( 'BB_ST_IMAGE_LINK_MODULE_DIR', plugin_dir_path( __FILE__ ) );
