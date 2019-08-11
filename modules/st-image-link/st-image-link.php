@@ -1,9 +1,9 @@
 <?php
 
 /**
- * @class FLExampleModule
+ * @class STFLImageLinkModule
  */
-class FLExampleModule extends FLBuilderModule {
+class STFLImageLinkModule extends FLBuilderModule {
 
     /**
      * Constructor function for the module. You must pass the
@@ -30,10 +30,6 @@ class FLExampleModule extends FLBuilderModule {
         // Already registered
         $this->add_css('font-awesome');
         $this->add_js('jquery-bxslider');
-
-        // Register and enqueue your own
-        $this->add_css('example-lib', $this->url . 'css/example-lib.css');
-        $this->add_js('example-lib', $this->url . 'js/example-lib.js', array(), '', true);
     }
 
     /**
@@ -45,8 +41,6 @@ class FLExampleModule extends FLBuilderModule {
      */
     public function update($settings)
     {
-        $settings->textarea_field .= ' - this text was appended in the update method.';
-
         return $settings;
     }
 
@@ -78,7 +72,7 @@ class FLExampleModule extends FLBuilderModule {
 /**
  * Register the module and its form settings.
  */
-FLBuilder::register_module('FLExampleModule', array(
+FLBuilder::register_module('STFLImageLinkModule', array(
     'general'       => array( // Tab
         'title'         => __('General', 'fl-builder'), // Tab title
         'sections'      => array( // Tab Sections
@@ -133,110 +127,6 @@ FLBuilder::register_module('FLExampleModule', array(
                             'unit'            => 'px'
                         )
                     ),
-                )
-            )
-        )
-    ),
-    'toggle'       => array( // Tab
-        'title'         => __('Toggle', 'fl-builder'), // Tab title
-        'sections'      => array( // Tab Sections
-            'general'       => array( // Section
-                'title'         => __('Toggle Example', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'toggle_me'     => array(
-                        'type'          => 'select',
-                        'label'         => __('Toggle Me!', 'fl-builder'),
-                        'default'       => 'option-1',
-                        'options'       => array(
-                            'option-1'      => __('Option 1', 'fl-builder'),
-                            'option-2'      => __('Option 2', 'fl-builder')
-                        ),
-                        'toggle'        => array(
-                            'option-1'      => array(
-                                'fields'        => array('toggle_text', 'toggle_text2'),
-                                'sections'      => array('toggle_section')
-                            ),
-                            'option-2'      => array()
-                        )
-                    ),
-                    'toggle_text'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Hide Me!', 'fl-builder'),
-                        'default'       => '',
-                        'description'   => 'I get hidden when you toggle the select above.'
-                    ),
-                    'toggle_text2'   => array(
-                        'type'          => 'text',
-                        'label'         => __('Me Too!', 'fl-builder'),
-                        'default'       => ''
-                    )
-                )
-            ),
-            'toggle_section' => array( // Section
-                'title'         => __('Hide This Section!', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'some_text'     => array(
-                        'type'          => 'text',
-                        'label'         => __('Text', 'fl-builder'),
-                        'default'       => ''
-                    )
-                )
-            )
-        )
-    ),
-    'multiple'      => array( // Tab
-        'title'         => __('Multiple', 'fl-builder'), // Tab title
-        'sections'      => array( // Tab Sections
-            'general'       => array( // Section
-                'title'         => __('Multiple Example', 'fl-builder'), // Section Title
-                'fields'        => array( // Section Fields
-                    'test'          => array(
-                        'type'          => 'text',
-                        'label'         => __('Multiple Test', 'fl-builder'),
-                        'multiple'      => true // Doesn't work with editor or photo fields
-                    )
-                )
-            )
-        )
-    ),
-    'include'       => array( // Tab
-        'title'         => __('Include', 'fl-builder'), // Tab title
-        'file'          => BB_ST_IMAGE_LINK_MODULE_DIR . 'st-image-link/includes/settings-example.php'
-    )
-));
-
-/**
- * Register a settings form to use in the "form" field type above.
- */
-FLBuilder::register_settings_form('example_settings_form', array(
-    'title' => __('Example Form Settings', 'fl-builder'),
-    'tabs'  => array(
-        'general'      => array( // Tab
-            'title'         => __('General', 'fl-builder'), // Tab title
-            'sections'      => array( // Tab Sections
-                'general'       => array( // Section
-                    'title'         => '', // Section Title
-                    'fields'        => array( // Section Fields
-                        'example'       => array(
-                            'type'          => 'text',
-                            'label'         => __('Example', 'fl-builder'),
-                            'default'       => 'Some example text'
-                        )
-                    )
-                )
-            )
-        ),
-        'another'       => array( // Tab
-            'title'         => __('Another Tab', 'fl-builder'), // Tab title
-            'sections'      => array( // Tab Sections
-                'general'       => array( // Section
-                    'title'         => '', // Section Title
-                    'fields'        => array( // Section Fields
-                        'another_example' => array(
-                            'type'          => 'text',
-                            'label'         => __('Another Example', 'fl-builder')
-                        )
-                    )
                 )
             )
         )
