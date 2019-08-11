@@ -1,0 +1,17 @@
+/**
+ * This file should contain frontend styles that
+ * will be applied to all module instances.
+ */
+.fl-st-image-link {
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+.st-image-link-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
