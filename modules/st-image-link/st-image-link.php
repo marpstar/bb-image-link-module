@@ -81,7 +81,7 @@ FLBuilder::register_module('STFLImageLinkModule', array(
                 'fields'        => array( // Section Fields
                     'text_color_field'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color Picker', 'fl-builder'),
+                        'label'         => __('Text Color', 'fl-builder'),
                         'default'       => 'FFFFFF',
                         'show_reset'    => true,
                         'preview'         => array(
@@ -92,13 +92,28 @@ FLBuilder::register_module('STFLImageLinkModule', array(
                     ),
                     'overlay_color_field'    => array(
                         'type'          => 'color',
-                        'label'         => __('Color Picker', 'fl-builder'),
+                        'label'         => __('Overlay Color', 'fl-builder'),
                         'default'       => '333333',
                         'show_reset'    => true,
                         'preview'         => array(
                             'type'            => 'css',
                             'selector'        => '.fl-st-image-link-overlay',
                             'property'        => 'background-color'
+                        )
+                    ),
+                    'overlay_opacity' => array(
+                        'type'        => 'unit',
+                        'label'       => 'Overlay Opacity',
+                        'default'     => 0.6,
+                        'slider' => array(
+                            'min'  	=> 0,
+                            'max'  	=> 1,
+                            'step' 	=> 0.1,
+                        ),
+                        'preview'         => array(
+                            'type'            => 'css',
+                            'selector'        => '.fl-st-image-link-overlay',
+                            'property'        => 'opacity'
                         )
                     ),
                     'photo_field'    => array(
@@ -108,12 +123,6 @@ FLBuilder::register_module('STFLImageLinkModule', array(
                     'link_field'     => array(
                         'type'          => 'link',
                         'label'         => __('Link Field', 'fl-builder')
-                    ),
-                    'editor_field'   => array(
-                        'type'          => 'editor',
-                        'label'         => '',
-                        'media_buttons' => false,
-                        'rows'          => 10
                     ),
                     'height' => array(
                         'type'        => 'unit',
@@ -127,6 +136,13 @@ FLBuilder::register_module('STFLImageLinkModule', array(
                             'unit'            => 'px'
                         )
                     ),
+                    'editor_field'   => array(
+                        'type'          => 'editor',
+                        'label'         => '',
+                        'media_buttons' => false,
+                        'rows'          => 10
+                    ),
+
                 )
             )
         )

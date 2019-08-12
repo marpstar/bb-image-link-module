@@ -13,5 +13,7 @@
 ?>
 <a class="fl-st-image-link" href="<?php echo $settings->link_field; ?>">
     <div class="fl-st-image-link-overlay"></div>
-    <?php echo $settings->editor_field; ?>
+    <div class="fl-st-image-link-content">
+        <?php echo $settings->editor_field; ?>
+    </div>
 </a>
