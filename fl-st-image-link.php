@@ -6,6 +6,8 @@
  * Version: 2.0
  * Author: Sandtoken LLC
  * Author URI: http://www.sandtoken.com
+ * License: GNU General Public License v2 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  */
 define( 'BB_ST_IMAGE_LINK_MODULE_DIR', plugin_dir_path( __FILE__ ) );
 define( 'BB_ST_IMAGE_LINK_MODULE_URL', plugins_url( '/', __FILE__ ) );
